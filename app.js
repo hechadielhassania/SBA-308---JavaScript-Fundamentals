@@ -1,3 +1,4 @@
+
 // Declare variables properly using let and const where appropriate.
 const latePenaltyRate = 0.1; // Penalty rate for late submissions
 let result = []; // Variable to store the final result
@@ -127,3 +128,25 @@ result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
 // Output processed data as described above
 console.log(result);
+
+// Processed data obtained from JavaScript code
+const processedData = [
+    { id: 1, avg: 85, 1: 80, 2: 90 }, // Example data
+    { id: 2, avg: 75, 1: 70, 2: 80 }   // Example data
+    // Add more data as needed
+  ];
+
+  const tableBody = document.getElementById("learner-data-body");
+
+  // Populate table with processed data
+  processedData.forEach(data => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${data.id}</td>
+      <td>${data.avg}%</td>
+      <td>${data[1] ? data[1] + "%" : "-"}</td>
+      <td>${data[2] ? data[2] + "%" : "-"}</td>
+      <!-- Add additional columns for more assignments -->
+    `;
+    tableBody.appendChild(row);
+  });
